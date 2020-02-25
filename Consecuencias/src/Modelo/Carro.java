@@ -1,15 +1,13 @@
 package Modelo;
 
 import java.time.LocalDate;
-import java.time.Month;
-
 import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
 public abstract class Carro {
 
 	private int catOcupantes;
 	private LocalDate fechaIngreso;
-	private Array[] ubicacion;
+	private int[] ubicacion[];
 	
 	public int getCatOcupantes() {
 		return catOcupantes;
@@ -23,14 +21,13 @@ public abstract class Carro {
 	public void setFechaIngreso(LocalDate fechaIngreso) {
 		this.fechaIngreso = fechaIngreso;
 	}
-	public Array[] getUbicacion() {
+	public int[] getUbicacion() {
+		int[] ubicacion = new int[15];
 		return ubicacion;
 	}
-	public void setUbicacion(Array[] ubicacion) {
+	public void setUbicacion(int[][] ubicacion) {
 		this.ubicacion = ubicacion;
 	} 
-
-
 	
-	
-}
+
+	}
