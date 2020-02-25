@@ -30,7 +30,7 @@ public class Caguano extends Carro {
 		}
 		
 		@Override 
-		public void setUbicacion(int[] ubicacion) {
+		public void setUbicacion(int[][] ubicacion) {
 			
 		}
 	
