@@ -1,6 +1,6 @@
 package Modelo;
 
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
+import Controlador.RandomInt;
 
 public class Caguano extends Carro {
 
@@ -29,9 +29,20 @@ public class Caguano extends Carro {
 			this.color = color;
 		}
 		
-		@Override 
-		public void setUbicacion(int[][] ubicacion) {
-			
+		public void setUbicacionX() {
+			int posX = RandomInt.getRandom(0, 14);
+			this.ubicacionX = posX;
+
 		}
+		
+		public void setUbicacionY() {
+			int posY = RandomInt.getRandom(0, 13);
+			this.ubicacionY = posY;
+		}
+		
+	
+		
+	
+	
 	
 }
