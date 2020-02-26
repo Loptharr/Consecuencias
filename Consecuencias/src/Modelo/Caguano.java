@@ -29,16 +29,7 @@ public class Caguano extends Carro {
 			this.color = color;
 		}
 		
-		public void setUbicacionX() {
-			int posX = RandomInt.getRandom(0, 14);
-			this.ubicacionX = posX;
-
-		}
 		
-		public void setUbicacionY() {
-			int posY = RandomInt.getRandom(0, 13);
-			this.ubicacionY = posY;
-		}
 		
 	
 		

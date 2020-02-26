@@ -29,22 +29,27 @@ public abstract class Carro {
 	
 	
 	public void setUbicacion() {
-		// TODO Auto-generated method stub
-		
+		this.setUbicacionX();
+		this.setUbicacionY();
 	}
 	public int getUbicacionX() {
 		return ubicacionX;
 	}
-	public void setUbicacionX() {
-		
-	}
+
 	public int getUbicacionY() {
 		return ubicacionY;
 	}
-	public void setUbicacionY() {
-		
+	
+	public void setUbicacionX() {
+		int posX = RandomInt.getRandom(0, 14);
+		this.ubicacionX = posX;
+
 	}
 	
+	public void setUbicacionY() {
+		int posY = RandomInt.getRandom(0, 14);
+		this.ubicacionY = posY;
+	}
 
 
 	
