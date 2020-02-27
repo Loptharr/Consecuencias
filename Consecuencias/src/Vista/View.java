@@ -51,7 +51,7 @@ public class View {
 		}
 		
 		//Debug para probar disaros
-		//mostrarMatriz(control.board.__GetBoard());
+		mostrarMatriz(control.board.__GetBoard());
 		
 		mostrarMenu();
 	}
@@ -92,7 +92,20 @@ public class View {
         	 System.out.println("Marcaste 2");
         	 Celd [][] tablero = control.board.__GetBoard();
         	 mostrarMatriz(tablero);
-        	 mostarPuntaje(150);
+        	 
+        	 //Intentando sumar puntos
+        	 
+        	 int sumScore = 0;
+     		//int y = 0;
+        	 for (int ix = 0; (ix < tablero.length); ix++) {
+        		sumScore = tablero[ix][ix]._score+sumScore;
+             	//y++;
+
+//                 for (int iy = 0; (iy < tablero.length); iy++) {
+//                	// sumScore = tablero[ix][iy]._score+sumScore;
+//                 }
+        	 }
+        	 mostarPuntaje(sumScore);
         	 break;
          default:
         	 System.out.println("Seleccionar opción válida (1/5): ");

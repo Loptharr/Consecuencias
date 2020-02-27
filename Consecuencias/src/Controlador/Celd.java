@@ -17,6 +17,8 @@ public class Celd {
     public boolean _isDestroyed = false;
     
     public String _container = "0";
+    
+    public int _score =  0;
 
 	public Celd() {
 		super();
