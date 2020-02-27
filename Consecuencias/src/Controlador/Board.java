@@ -14,7 +14,7 @@ public class Board {
     }
     
     public final void __CreateEmptyBoard(int x, int y) {
-        this._board = new Celd[x][];
+        this._board = new Celd[x][y];
         for (int ix = 0; (ix < x); ix++) {
             for (int iy = 0; (iy < y); iy++) {
                 this._board[ix][iy] = new Celd();

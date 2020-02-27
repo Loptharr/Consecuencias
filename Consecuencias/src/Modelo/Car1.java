@@ -2,9 +2,26 @@ package Modelo;
 
 public class Car1 extends BaseCar {
     
+	private float _nivel_armadura;
+    private String _nombre_usuario;
+	
     public Car1() {
-        _sizeCar = 1;
-        _carName = "carro 1";
-        _carKey = "A";
+        this._sizeCar = 1;
+        this._carName = "carro 1";
+        this._carKey = "A";
     }
+    
+    public float getNivel_armadura() {
+        return _nivel_armadura;
+    }
+    public void setNivel_armadura(float nivel_armadura) {
+        this._nivel_armadura = nivel_armadura;
+    }
+    public String getNombre_usuario() {
+        return _nombre_usuario;
+    }
+    public void setNombre_usuario(String nombre_usuario) {
+        this._nombre_usuario = nombre_usuario;
+    }
+    
 }

@@ -6,6 +6,8 @@ import Controlador.Controller;
 import Controlador.Position;
 import Controlador.RandomPosition;
 import Modelo.Car1;
+import Modelo.Car2;
+import Modelo.Car3;
 import Modelo.Missile;
 
 public class View {
@@ -24,14 +26,18 @@ public class View {
 		}
 		
 		for (int i = 0; i < 5; i++) {
-			
+			Car2 car2 = new Car2();
+			Position position = RandomPosition.getRandom(0, 12); //AGREGAR MIN X & MAX X Y MIN Y & MAX Y
+			control.board.__TryInsertNewCar(car2, position);
 		}
 		
 		for (int i = 0; i < 10; i++) {
-			
+			Car3 car3 = new Car3();
+			Position position = RandomPosition.getRandom(0, 12); //AGREGAR MIN X & MAX X Y MIN Y & MAX Y
+			control.board.__TryInsertNewCar(car3, position);
 		}
 		
-		control.board.__TryInsertNewCar(car, position);
+		
 		mostrarMenu();
 	}
 
