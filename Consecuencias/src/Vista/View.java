@@ -19,7 +19,7 @@ public class View {
 		
 		for (int i = 0; i < 3; i++) {
 			Car1 car1 = new Car1();
-			Position position = RandomPosition.getRandom(0, 12);
+			Position position = RandomPosition.getRandom(0, 12); //AGREGAR MIN X & MAX X Y MIN Y & MAX Y
 			control.board.__TryInsertNewCar(car1, position);
 		}
 		
