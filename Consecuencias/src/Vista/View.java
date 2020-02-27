@@ -50,7 +50,7 @@ public class View {
 			} while(!inserted);
 		}
 		
-		//Debug para probar disaros
+		//Debug para probar disparos
 		//mostrarMatriz(control.board.__GetBoard());
 		
 		mostrarMenu();
