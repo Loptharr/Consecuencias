@@ -2,6 +2,7 @@ package Vista;
 
 import java.util.Scanner;
 
+import Controlador.Celd;
 import Controlador.Controller;
 import Controlador.Position;
 import Controlador.RandomPosition;
@@ -19,24 +20,38 @@ public class View {
 		startGameMenu();
 		control.board.__CreateEmptyBoard(15, 15);
 		
-		for (int i = 0; i < 3; i++) {
+		
+		//Agregar Cars al Board
+		for (int i = 0; i < 10; i++) {
+			Boolean inserted = false;
+			do {
 			Car1 car1 = new Car1();
-			Position position = RandomPosition.getRandom(0, 12); //AGREGAR MIN X & MAX X Y MIN Y & MAX Y
-			control.board.__TryInsertNewCar(car1, position);
+			Position position = RandomPosition.getRandom(0, 14, 0, 14); //AGREGAR MIN X & MAX X Y MIN Y & MAX Y
+			inserted = control.board.__TryInsertNewCar(car1, position);
+			} while(!inserted);
 		}
 		
 		for (int i = 0; i < 5; i++) {
-			Car2 car2 = new Car2();
-			Position position = RandomPosition.getRandom(0, 12); //AGREGAR MIN X & MAX X Y MIN Y & MAX Y
-			control.board.__TryInsertNewCar(car2, position);
+			Boolean inserted = false;
+			do {
+				Car2 car2 = new Car2();
+				Position position = RandomPosition.getRandom(0, 13, 0, 14); //AGREGAR MIN X & MAX X Y MIN Y & MAX Y
+				inserted = control.board.__TryInsertNewCar(car2, position);
+			} while(!inserted);
+			
 		}
 		
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 3; i++) {
+			Boolean inserted = false;
+			do {
 			Car3 car3 = new Car3();
-			Position position = RandomPosition.getRandom(0, 12); //AGREGAR MIN X & MAX X Y MIN Y & MAX Y
-			control.board.__TryInsertNewCar(car3, position);
+			Position position = RandomPosition.getRandom(0, 14, 0, 12); //AGREGAR MIN X & MAX X Y MIN Y & MAX Y
+			inserted = control.board.__TryInsertNewCar(car3, position);
+			} while(!inserted);
 		}
 		
+		//Debug para probar disaros
+		//mostrarMatriz(control.board.__GetBoard());
 		
 		mostrarMenu();
 	}
@@ -46,7 +61,7 @@ public class View {
 		System.out.println("---------------");
         System.out.println("START GAME");
         System.out.println("----------------");
-        System.out.println("Presiona cualquier tecla para continuar");
+        System.out.println("Presiona cualquier numero para continuar");
         int opcion = teclado.nextInt();
 	}
 	
@@ -75,7 +90,7 @@ public class View {
         	 break;
          case 2:
         	 System.out.println("Marcaste 2");
-        	 int [][] tablero = new int [15][15];
+        	 Celd [][] tablero = control.board.__GetBoard();
         	 mostrarMatriz(tablero);
         	 mostarPuntaje(150);
         	 break;
@@ -102,12 +117,12 @@ public class View {
 		return pos;
 	}
 	
-	public static void mostrarMatriz(int matriz[][]) {
-		for (int i = 0; i < matriz.length; i++) {         //la fila de la matriz.
-            for (int j = 0; j < matriz[i].length; j++) {   //la columna de la matriz.
-            	if (matriz[i][j]==0) {
+	public static void mostrarMatriz(Celd[][] tablero) {
+		for (int i = 0; i < tablero.length; i++) {         //la fila de la matriz.
+            for (int j = 0; j < tablero[i].length; j++) {   //la columna de la matriz.
+            	if (tablero[i][j]==null) {
             		System.out.print("0" + " ");				//Imprime vacios
-				} else {System.out.print(matriz[i][j] + " ");}
+				} else {System.out.print(tablero[i][j]._container + " ");}
             }
             System.out.println(); //Cambio de linea.
          }}

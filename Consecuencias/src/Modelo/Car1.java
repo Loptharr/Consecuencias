@@ -7,8 +7,8 @@ public class Car1 extends BaseCar {
 	
     public Car1() {
         this._sizeCar = 1;
-        this._carName = "carro 1";
-        this._carKey = "A";
+        this._carName = "Trupalla";
+        this._carKey = "T";
     }
     
     public float getNivel_armadura() {

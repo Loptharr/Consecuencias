@@ -7,8 +7,8 @@ public class Car3 extends BaseCar {
 	
     public Car3() {
         this._sizeCar = 3;
-        this._carName = "carro 3";
-        this._carKey = "C";
+        this._carName = "Kromi";
+        this._carKey = "K";
     }
     
     public int getAnio_fabricacion() {

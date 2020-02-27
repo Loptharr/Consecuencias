@@ -6,9 +6,9 @@ public class Car2 extends BaseCar {
 	private String _color;
     
     public Car2() {
-        _sizeCar = 2;
-        _carName = "carro 2";
-        _carKey = "B";
+        this._sizeCar = 2;
+        this._carName = "Caguano";
+        this._carKey = "C";
     }
     
     public float getAlcance() {

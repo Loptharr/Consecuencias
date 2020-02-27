@@ -25,39 +25,28 @@ public class Board {
         this._isBoardCreated = true;
     }
     
-    public final void __TryInsertNewCar(BaseCar car, Position position) {
-        if (!this._isBoardCreated) {
-            return;
+    public final boolean __TryInsertNewCar(BaseCar car, Position position) {
+        if (!this._isBoardCreated) {  // Tablero no creado
+            return false;
+        }
+   
+        if (!this.__IsValidPositionOnBoard(position)) {	// null
+            return false;
         }
         
-        // Tablero no creado
-        if ((car == null)) {
-            return;
+        
+        if (!this.__IsThisPositionAvailableForThisCar(car, position)) {	//  message
+            return false;
         }
         
-        // null
-        if ((position == null)) {
-            return;
-        }
-        
-        // null
-        if (this.__IsValidPositionOnBoard(position)) {
-            return;
-        }
-        
-        //  message
-        if (this.__IsThisPositionAvailableForThisCar(car, position)) {
-            return;
-        }
-        
-        //  message
-        this.__InsertNewCar(car, position);
+        this.__InsertNewCar(car, position);	
+        return true;//  message
     }
     
     public final void __InsertNewCar(BaseCar car, Position position) {
         switch (car._sizeCar) {
             case 1:
-                this._board[position._x] [position._y]._container = car._carKey;
+            	this._board[position._x][position._y]._container = car._carKey;
                 break;
             case 2:
                 this._board[position._x][ position._y]._container = car._carKey;
@@ -67,6 +56,8 @@ public class Board {
                 this._board[position._x][ position._y]._container = car._carKey;
                 this._board[position._x][(position._y + 1)]._container = car._carKey;
                 this._board[position._x][(position._y + 2)]._container = car._carKey;
+                break;
+            default:
                 break;
         }
     }
@@ -144,9 +135,30 @@ public class Board {
     {
         if (!__IsValidPositionOnBoard(missile._position)) return;
         _board[missile._position._x][ missile._position._y]._isDestroyed = true;
+        switch (_board[missile._position._x][ missile._position._y]._container) {
+        case "T":
+        	this._board[missile._position._x][ missile._position._y]._container="1";
+        	break;
+          
+        case "C":
+        	this._board[missile._position._x][ missile._position._y]._container="3";
+        	break;
+           
+        case "K":
+        	this._board[missile._position._x][ missile._position._y]._container="7";
+        	break;
+            
+        case "0":
+        	this._board[missile._position._x][ missile._position._y]._container="X";
+        	break;
+           
+           
+        default:
+        	break;
+        
     }
 }
-
+}
 
 
 
