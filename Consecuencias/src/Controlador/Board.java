@@ -138,18 +138,22 @@ public class Board {
         switch (_board[missile._position._x][ missile._position._y]._container) {
         case "T":
         	this._board[missile._position._x][ missile._position._y]._container="1";
+        	this._board[missile._position._x][ missile._position._y]._score = 1;
         	break;
           
         case "C":
         	this._board[missile._position._x][ missile._position._y]._container="3";
+        	this._board[missile._position._x][ missile._position._y]._score = 3;;
         	break;
            
         case "K":
         	this._board[missile._position._x][ missile._position._y]._container="7";
+        	this._board[missile._position._x][ missile._position._y]._score = 7;
         	break;
             
         case "0":
         	this._board[missile._position._x][ missile._position._y]._container="X";
+        	this._board[missile._position._x][ missile._position._y]._score = 0;
         	break;
            
            

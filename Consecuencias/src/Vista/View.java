@@ -61,8 +61,8 @@ public class View {
 		System.out.println("---------------");
         System.out.println("START GAME");
         System.out.println("----------------");
-        System.out.println("Presiona cualquier numero para continuar");
-        int opcion = teclado.nextInt();
+        System.out.println("Presiona cualquier tecla y enter para continuar");
+        String opcion = teclado.next();
 	}
 	
 	public static void mostrarMenu() {
@@ -98,12 +98,12 @@ public class View {
         	 int sumScore = 0;
      		//int y = 0;
         	 for (int ix = 0; (ix < tablero.length); ix++) {
-        		sumScore = tablero[ix][ix]._score+sumScore;
+        		//sumScore = tablero[ix][ix]._score+sumScore;
              	//y++;
 
-//                 for (int iy = 0; (iy < tablero.length); iy++) {
-//                	// sumScore = tablero[ix][iy]._score+sumScore;
-//                 }
+                 for (int iy = 0; (iy < tablero.length); iy++) {
+                	 sumScore = tablero[ix][iy]._score+sumScore;
+                 }
         	 }
         	 mostarPuntaje(sumScore);
         	 break;
