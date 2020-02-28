@@ -4,11 +4,11 @@ public class Celd {
     
     public static String EMPTY = "0";
     
-    public String CAR_1 = "car1";
-    
-    public String CAR_2 = "car2";
-    
-    public String CAR_3 = "car3";
+//    public String CAR_1 = "T";
+//    
+//    public String CAR_2 = "C";
+//    
+//    public String CAR_3 = "K";
     
     public int _x = 0;
     

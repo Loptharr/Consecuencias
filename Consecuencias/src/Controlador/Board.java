@@ -47,21 +47,15 @@ public class Board {
         switch (car._sizeCar) {
             case 1:
             	this._board[position._x][position._y]._container = car._carKey;
-            	this._board[position._x][position._y]._score = 1;
                 break;
             case 2:
                 this._board[position._x][ position._y]._container = car._carKey;
-                this._board[position._x][position._y]._score = 5;
-                this._board[(position._x + 1)][ position._y]._container = car._carKey;
-                this._board[(position._x + 1)][ position._y]._score = 5;
+                this._board[(position._x)][ position._y+1]._container = car._carKey;
                 break;
             case 3:
                 this._board[position._x][ position._y]._container = car._carKey;
-                this._board[position._x][position._y]._score = 7;
-                this._board[position._x][(position._y + 1)]._container = car._carKey;
-                this._board[(position._x + 1)][ position._y]._score = 7;
-                this._board[position._x][(position._y + 2)]._container = car._carKey;
-                this._board[position._x][(position._y + 2)]._score = 7;
+                this._board[position._x+ 1][(position._y)]._container = car._carKey;
+                this._board[position._x+ 2][(position._y )]._container = car._carKey;
                 break;
             default:
                 break;
